@@ -2,9 +2,9 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { User, LogOut } from 'lucide-react';
+import { User, LogOut, Bell } from 'lucide-react';
 
-export const Header = ({ user, onLogout, walletBalance }) => {
+export const Header = ({ user, onLogout, walletBalance, onProfileClick }) => {
   return (
     <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
       <div className="container mx-auto px-4 py-6">
@@ -13,10 +13,22 @@ export const Header = ({ user, onLogout, walletBalance }) => {
             <h1 className="text-2xl font-bold">Billyatra</h1>
             <p className="text-blue-100">Hello, {user?.name || 'User'}!</p>
           </div>
-          <Button variant="ghost" onClick={onLogout} className="text-white hover:bg-white/20">
-            <LogOut className="w-4 h-4 mr-2" />
-            Logout
-          </Button>
+          <div className="flex items-center gap-3">
+            <Button variant="ghost" className="text-white hover:bg-white/20">
+              <Bell className="w-4 h-4" />
+            </Button>
+            <Button 
+              variant="ghost" 
+              onClick={onProfileClick}
+              className="text-white hover:bg-white/20"
+            >
+              <User className="w-4 h-4" />
+            </Button>
+            <Button variant="ghost" onClick={onLogout} className="text-white hover:bg-white/20">
+              <LogOut className="w-4 h-4 mr-2" />
+              Logout
+            </Button>
+          </div>
         </div>
         
         <Card className="mt-6 bg-white/10 backdrop-blur border-0 text-white">
