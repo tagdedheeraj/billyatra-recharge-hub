@@ -2,14 +2,14 @@
 import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Phone, Calendar, User, Ticket, Clock, Plane, Train } from 'lucide-react';
+import { Smartphone, Tv, Phone, Bus, Plane, Train, Clock } from 'lucide-react';
 
 export const ServicesGrid = () => {
   const services = [
-    { icon: Phone, label: 'Mobile Recharge', available: true, color: 'from-green-400 to-emerald-500' },
-    { icon: Calendar, label: 'DTH Recharge', available: true, color: 'from-blue-400 to-blue-500' },
-    { icon: User, label: 'Postpaid Bills', available: true, color: 'from-purple-400 to-purple-500' },
-    { icon: Ticket, label: 'Bus Tickets', available: false, color: 'from-orange-400 to-orange-500' },
+    { icon: Smartphone, label: 'Mobile Recharge', available: true, color: 'from-green-400 to-emerald-500' },
+    { icon: Tv, label: 'DTH Recharge', available: false, color: 'from-blue-400 to-blue-500' },
+    { icon: Phone, label: 'Postpaid Bills', available: false, color: 'from-purple-400 to-purple-500' },
+    { icon: Bus, label: 'Bus Tickets', available: false, color: 'from-orange-400 to-orange-500' },
     { icon: Plane, label: 'Flight Tickets', available: false, color: 'from-red-400 to-red-500' },
     { icon: Train, label: 'Train Tickets', available: false, color: 'from-indigo-400 to-indigo-500' },
   ];
