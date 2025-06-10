@@ -24,25 +24,39 @@ export const Dashboard = ({ user, onLogout }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
-      <Header 
-        user={user} 
-        onLogout={onLogout} 
-        walletBalance={walletBalance}
-        onProfileClick={() => setShowProfile(true)}
-      />
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-50 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse"></div>
+      </div>
       
-      <div className="container mx-auto px-4 py-6 space-y-6">
-        <QuickActions onRecharge={() => setShowRechargeModal(true)} />
-        <BillPayments />
-        <OffersSection />
-        <ServicesGrid />
+      <div className="relative z-10">
+        <Header 
+          user={user} 
+          onLogout={onLogout} 
+          walletBalance={walletBalance}
+          onProfileClick={() => setShowProfile(true)}
+        />
         
-        <div className="grid md:grid-cols-2 gap-6">
-          <TransactionHistory />
-          <div className="space-y-6">
-            <PaymentMethods />
-            <Notifications />
+        <div className="container mx-auto px-4 py-8 space-y-8">
+          <QuickActions onRecharge={() => setShowRechargeModal(true)} />
+          <BillPayments />
+          <OffersSection />
+          <ServicesGrid />
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="animate-fade-in" style={{ animationDelay: '600ms' }}>
+              <TransactionHistory />
+            </div>
+            <div className="space-y-6">
+              <div className="animate-fade-in" style={{ animationDelay: '700ms' }}>
+                <PaymentMethods />
+              </div>
+              <div className="animate-fade-in" style={{ animationDelay: '800ms' }}>
+                <Notifications />
+              </div>
+            </div>
           </div>
         </div>
       </div>
